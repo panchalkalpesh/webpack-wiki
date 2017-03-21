@@ -45,3 +45,25 @@ This configuration will create two files in the `dist/` folder. **app.js** and *
 #### Important!
 
 Remember to add both files to your HTML file, or you will get the error: `Uncaught ReferenceError: webpackJsonp is not defined`.
+
+
+
+
+## Resolve Modules loaded under node_modules
+
+```
+resolveLoader: {
+  root: path.join(__dirname, 'node_modules')
+}
+```
+
+## Resolve modules loaded in multiple directories
+```
+resolveLoader: {
+      modulesDirectories: [
+          path.resolve(__dirname, "bower"), 
+          path.resolve(__dirname, "node_modules")
+          // ...
+      ]
+}
+```
